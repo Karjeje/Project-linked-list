@@ -18,6 +18,10 @@ class LinkedList {
       current.nextNode = newNode;
     }
   }
+
+  prepend(value) {
+    this.head = new Node(value, this.head);
+  }
 }
 
 export default LinkedList;
