@@ -12,6 +12,7 @@
     "url": "git+https://github.com/Karjeje/Project-linked-list.git"
   },
   "keywords": [],
+  "type": "module",
   "author": "",
   "license": "ISC",
   "bugs": {
