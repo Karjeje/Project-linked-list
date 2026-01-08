@@ -33,6 +33,11 @@ class LinkedList {
     }
     return count;
   }
+
+  getHead() {
+    if (this.head === null) return undefined;
+    return this.head.value;
+  }
 }
 
 export default LinkedList;
