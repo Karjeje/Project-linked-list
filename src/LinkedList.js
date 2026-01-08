@@ -38,6 +38,16 @@ class LinkedList {
     if (this.head === null) return undefined;
     return this.head.value;
   }
+
+  getTail() {
+    if (this.head === null) return undefined;
+
+    let current = this.head;
+    while (current.nextNode !== null) {
+      current = current.nextNode;
+    }
+    return current.value;
+  }
 }
 
 export default LinkedList;
