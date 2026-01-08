@@ -4,10 +4,9 @@ const list = new LinkedList();
 
 list.append('dog');
 list.append('cat');
-list.prepend('bobakau');
+list.append('parrot');
+list.append('hamster');
+list.append('snake');
+list.append('turtle');
 
-let current = list.head;
-while (current !== null) {
-  console.log(current.value);
-  current = current.nextNode;
-}
+console.log(list.toString());
