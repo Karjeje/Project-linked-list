@@ -48,6 +48,17 @@ class LinkedList {
     }
     return current.value;
   }
+
+  at(index) {
+    let current = this.head;
+    for (let i = 1; i < index; i++) {
+      current = current.nextNode;
+    }
+
+    if (current === null) return undefined;
+
+    return current.value;
+  }
 }
 
 export default LinkedList;
