@@ -92,6 +92,19 @@ class LinkedList {
     }
     return false;
   }
+
+  findIndex(value) {
+    let current = this.head;
+    let index = 0;
+
+    while (current !== null) {
+      if (current.value === value) return index;
+      index++;
+      current = current.nextNode;
+    }
+
+    return -1;
+  }
 }
 
 export default LinkedList;
