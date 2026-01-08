@@ -119,6 +119,50 @@ class LinkedList {
     output += 'null';
     return output;
   }
+
+  insertAt(index, ...values) {
+    if (index < 0) throw new RangeError();
+
+    if (values.length === 0) return;
+
+    if (this.head === null && index > 0) {
+      throw new RangeError();
+    }
+
+    if (index === 0) {
+      const firstNewNode = new Node(values[0]);
+      let tail = firstNewNode;
+
+      for (let i = 1; i < values.length; i++) {
+        tail.nextNode = new Node(values[i]);
+        tail = tail.nextNode;
+      }
+
+      tail.nextNode = this.head;
+      this.head = firstNewNode;
+
+      return;
+    }
+
+    let current = this.head;
+
+    for (let i = 0; i < index - 1; i++) {
+      if (current === null) throw new RangeError();
+      current = current.nextNode;
+    }
+
+    const firstNewNode = new Node(values[0]);
+    let tail = firstNewNode;
+
+    for (let i = 1; i < values.length; i++) {
+      tail.nextNode = new Node(values[i]);
+      tail = tail.nextNode;
+    }
+
+    const after = current.nextNode;
+    current.nextNode = firstNewNode;
+    tail.nextNode = after;
+  }
 }
 
 export default LinkedList;
