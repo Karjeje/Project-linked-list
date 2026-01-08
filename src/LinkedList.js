@@ -163,6 +163,31 @@ class LinkedList {
     current.nextNode = firstNewNode;
     tail.nextNode = after;
   }
+
+  removeAt(index) {
+    if (index < 0) throw new RangeError();
+
+    if (this.head === null) throw new RangeError();
+
+    if (index === 0) {
+      this.head = this.head.nextNode;
+      return;
+    }
+
+    let prev = this.head;
+    let current = this.head.nextNode;
+    let currentIndex = 1;
+
+    while (current !== null && currentIndex < index) {
+      prev = current;
+      current = current.nextNode;
+      currentIndex++;
+    }
+
+    if (current === null) throw new RangeError();
+
+    prev.nextNode = current.nextNode;
+  }
 }
 
 export default LinkedList;
